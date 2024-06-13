@@ -18,7 +18,7 @@ class _NewExpenseState extends State<NewExpense> {
   Category _selectedCategory = Category.food;
 
   void _submitExpenseData() {
-    print('fuga fuga fuga fuga');
+    // print('fuga fuga fuga fuga');
     final enteredAmount = double.tryParse(_amountController.text);
     final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
     if (_titleController.text.isEmpty ||
@@ -48,6 +48,8 @@ class _NewExpenseState extends State<NewExpense> {
         amount: enteredAmount,
         date: _selectedDate!,
         category: _selectedCategory));
+
+    Navigator.pop(context);
   }
 
   @override
@@ -75,7 +77,7 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
